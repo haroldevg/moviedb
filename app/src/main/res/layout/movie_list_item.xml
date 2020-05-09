@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <ImageView
+        android:id="@+id/iv_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_shape"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="16dp"
+        android:paddingEnd="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp">
+        <TextView
+            android:id="@+id/tv_title"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RatingBar
+            android:id="@+id/rb_average"
+            android:layout_width="wrap_content"
+            android:numStars="10"
+            android:scaleX="0.4"
+            android:scaleY="0.4"
+            android:theme="@style/RatingBar"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</RelativeLayout>

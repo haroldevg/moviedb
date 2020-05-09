@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MovieDB</string>
+    <string name="error_message">An error has occurred. Please try again.</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="popular">Popular</string>
+    <string name="title_label">Title</string>
+    <string name="release_date_label">Release Date</string>
+    <string name="vote_average_label">Vote Average</string>
+    <string name="review_label">Review</string>
+    <string name="image_movie_description">Image movie</string>
 </resources>

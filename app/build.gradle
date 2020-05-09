@@ -1,5 +1,20 @@
 apply plugin: 'com.android.application'
 
+def apiKeyPropertiesFile = rootProject.file('apikey.properties')
+
+def apiKeyProperties = new Properties()
+
+if (apiKeyPropertiesFile.exists()) {
+    apiKeyPropertiesFile.withReader('UTF-8') { reader ->
+        apiKeyProperties.load(reader)
+    }
+}
+
+def movieApiKeyProp = apiKeyProperties.getProperty('MOVIEDB_KEY')
+if (movieApiKeyProp == null) {
+    movieApiKeyProp = ''
+}
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -11,6 +26,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "MOVIEDB_KEY", movieApiKeyProp)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -28,7 +44,10 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
